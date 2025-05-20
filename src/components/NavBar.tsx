@@ -5,11 +5,15 @@ import SearchInput from "./SearchInput";
 
 //webp images are higly optimized images for web
 
-const NavBar = () => {
+interface Props {
+  onSearch: (searchText: string) => void;
+}
+
+const NavBar = ({ onSearch }: Props) => {
   return (
     <HStack padding="10px">
       <Image src={logo} boxSize="60px" />
-      <SearchInput />
+      <SearchInput onSearch={onSearch} />
       <ColorModeSwitch />
     </HStack>
   );
